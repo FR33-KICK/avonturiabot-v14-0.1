@@ -19,7 +19,7 @@ const { ActivityType } = require("discord.js");
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
-  client.user.setActivity("AvonturiaParkMC.nl", {
+  client.user.setActivity("AvonturiaParkMC", {
     type: ActivityType.Watching,
   });
     let guildId = config.guildID;

@@ -4,6 +4,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('mededeling')
 		.setDescription('Maak een mededeling.')
+		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.addStringOption(option =>
 			option.setName('titel')
 			.setDescription("Geef een titel op.")
