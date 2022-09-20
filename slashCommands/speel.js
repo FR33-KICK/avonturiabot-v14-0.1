@@ -34,7 +34,7 @@ module.exports = {
 			adapterCreator: voiceChannel.guild.voiceAdapterCreator,
 		});
 
-		interaction.reply("Begonnen met spelen")
+		interaction.reply(`Begonnen met het spelen van ${link} in ${channel}`)
 
 		const subscription = connection.subscribe(player);
 
