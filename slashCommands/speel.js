@@ -20,7 +20,7 @@ module.exports = {
 		),
 	async autocomplete(interaction, client) {
 		const focusedValue = interaction.options.getFocused();
-		const choices = ["SLAM! top40", "Qmusic", "RADIO538", "BBC", "SLAM! Hardstyle"];
+		const choices = ["📻 Radio: SLAM! top40", "📻 Radio: Qmusic", "📻 Radio: RADIO538", "📻 Radio: BBC", "📻 Radio: SLAM! Hardstyle", "📻 Radio: !SLAM", "📻 Radio: NPO 3FM", "📻 Radio: LoFi Cafe", "📻 Radio: Efteling Radio"];
 		const filtered = choices.filter((choice) => 
 		    choice.startsWith(focusedValue)
 		);

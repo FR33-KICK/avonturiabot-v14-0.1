@@ -45,34 +45,59 @@ client.on('interactionCreate', async (interaction) => {
       interaction.respond([
           {
               // What is shown to the user
-              name: 'BBC',
+              name: '📻 Radio: BBC',
               // What is actually used as the option.
               value: 'https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one'
           },
           {
             // What is shown to the user
-            name: 'RADIO538',
+            name: '📻 Radio: RADIO538',
             // What is actually used as the option.
             value: 'http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3'
         },
         {
           // What is shown to the user
-          name: 'Qmusic',
+          name: '📻 Radio: Qmusic',
           // What is actually used as the option.
           value: 'https://stream.qmusic.nl/qmusic/mp3'
       },
       {
         // What is shown to the user
-        name: 'SLAM! top40',
+        name: '📻 Radio: SLAM! top40',
         // What is actually used as the option.
         value: 'https://stream.slam.nl/web14_mp3'
     },
           {
         // What is shown to the user
-        name: 'SLAM! Hardstyle',
+        name: '📻 Radio: SLAM! Hardstyle',
         // What is actually used as the option.
         value: 'http://streaming.slam.nl/web11_mp3'
-    }
+    },
+    {
+      // What is shown to the user
+      name: '📻 Radio: SLAM!',
+      // What is actually used as the option.
+      value: 'https://player.slam.nl/?stream=slam'
+  },
+  {
+    // What is shown to the user
+    name: '📻 Radio: NPO 3FM',
+    // What is actually used as the option.
+    value: 'https://icecast.omroep.nl/3fm-bb-mp3'
+},
+{
+  // What is shown to the user
+  name: '📻 Radio: LoFi Cafe',
+  // What is actually used as the option.
+  value: 'https://www.lofi.cafe/'
+},
+{
+  // What is shown to the user
+  name: '📻 Radio: Efteling Radio',
+  // What is actually used as the option.
+  value: 'https://www.mp3streams.nl/zender/efteling-kids-radio/stream/107-mp3-192'
+},
+    
       ]);
   }
 });
