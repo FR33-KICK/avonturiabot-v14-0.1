@@ -26,7 +26,7 @@ client.on("ready", () => {
   });
     let guildId = config.guildID;
     let clientId = config.clientID;
-    let token = config.token
+    let token = process.env.token
 ;
 
     const rest = new REST({version: 10}).setToken(token);
@@ -106,5 +106,5 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.login(config.token
+client.login(process.env.token
 );
