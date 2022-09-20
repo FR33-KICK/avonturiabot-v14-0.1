@@ -24,9 +24,18 @@ module.exports = {
 
 		if (subscription) {
 
-			interaction.reply("Muziek is gestopt")
+			var embed1 = new EmbedBuilder()
+			.setColor("#992D22")
+			.addFields(
+				{name: "AvonturiaParkMC | Muziek", value: `Muziek is gestopt met afspelen`}
+			)
+			.setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+	
+			interaction.reply({ embeds: [embed1] })
 			setTimeout(() => subscription.unsubscribe);
 		}
+
+		
 
 },
 };
