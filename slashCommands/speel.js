@@ -20,7 +20,7 @@ module.exports = {
 		),
 	async autocomplete(interaction, client) {
 		const focusedValue = interaction.options.getFocused();
-		const choices = ["📻 Radio: SLAM! top40", "📻 Radio: Qmusic", "📻 Radio: RADIO538", "📻 Radio: BBC", "📻 Radio: SLAM! Hardstyle", "📻 Radio: !SLAM", "📻 Radio: NPO 3FM", "📻 Radio: LoFi Cafe", "📻 Radio: Efteling Radio", "🎼 Muziek: Efteling muziek mix", "🎼 Muziek: AvonturiaParkMC Watershow", "🎼 Muziek: AvonturiaParkMC Mainstreet muziek"];
+		const choices = ["📻 Radio: SLAM! top40", "📻 Radio: Qmusic", "📻 Radio: RADIO538", "📻 Radio: BBC", "📻 Radio: SLAM! Hardstyle", "📻 Radio: !SLAM", "📻 Radio: NPO 3FM", "📻 Radio: Efteling Radio", "🎼 Muziek: Efteling muziek mix", "🎼 Muziek: AvonturiaParkMC Watershow", "🎼 Muziek: AvonturiaParkMC Mainstreet muziek", "🎼 Muziek: Disney Film muziek"];
 		const filtered = choices.filter((choice) => 
 		    choice.startsWith(focusedValue)
 		);
@@ -29,11 +29,10 @@ module.exports = {
 		  );
 		},
 
-		async execute(client, interaction) {
+		async execute(client, interaction) { 
 
 		let link = await interaction.options.getString("link");
 		let channel = await interaction.options.getChannel("channel");
-
 
 		const voiceChannelId = channel.id;
 		const voiceChannel = client.channels.cache.get(voiceChannelId);

@@ -87,12 +87,6 @@ client.on('interactionCreate', async (interaction) => {
 },
 {
   // What is shown to the user
-  name: '📻 Radio: LoFi Cafe',
-  // What is actually used as the option.
-  value: 'https://www.lofi.cafe/'
-},
-{
-  // What is shown to the user
   name: '📻 Radio: Efteling Radio',
   // What is actually used as the option.
   value: 'https://www.mp3streams.nl/zender/efteling-kids-radio/stream/107-mp3-192'
@@ -114,6 +108,18 @@ client.on('interactionCreate', async (interaction) => {
   name: '🎼 Muziek: AvonturiaParkMC Mainstreet muziek',
   // What is actually used as the option.
   value: 'https://audio.jukehost.co.uk/MtPSWXUZEGwamAKwqL6TzuajtZ3h3lTd'
+},
+{
+  // What is shown to the user
+  name: '🎼 Muziek: AvonturiaParkMC Mainstreet muziek',
+  // What is actually used as the option.
+  value: 'https://audio.jukehost.co.uk/MtPSWXUZEGwamAKwqL6TzuajtZ3h3lTd'
+},
+{
+  // What is shown to the user
+  name: '🎼 Muziek: Disney Film muziek',
+  // What is actually used as the option.
+  value: 'https://audio.jukehost.co.uk/ANc18oZSIgVd7LpLyMgUHqtpZnrDhqgn'
 },
     
       ]);
