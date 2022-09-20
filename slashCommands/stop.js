@@ -27,7 +27,7 @@ module.exports = {
 			var embed1 = new EmbedBuilder()
 			.setColor("#992D22")
 			.addFields(
-				{name: "AvonturiaParkMC | Muziek", value: `Muziek is gestopt met afspelen`}
+				{name: "AvonturiaParkMC | Muziek", value: `❌ Muziek is **gestopt** met afspelen ❌`}
 			)
 			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
 	
