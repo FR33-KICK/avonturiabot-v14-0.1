@@ -1,4 +1,5 @@
-const {Client, GatewayIntentBits, Routes, Collection } = require("discord.js");
+const {Client, GatewayIntentBits, Routes, Collection, EmbedBuilder } = require("discord.js");
+const Discord = require('discord.js')
 const config = require("./config.json");
 const fs = require("node:fs");
 const path = require('node:path')
@@ -6,6 +7,7 @@ const { REST } = require("@discordjs/rest");
 
 const client = new Client({
     intents: [
+        GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
@@ -34,9 +36,6 @@ client.on("ready", () => {
 	.catch(console.error);
 
 })
-
-
-
 
 //command handler
 const commandsPath = path.join(__dirname, 'slashCommands');
