@@ -77,7 +77,7 @@ client.on('interactionCreate', async (interaction) => {
       // What is shown to the user
       name: '📻 Radio: SLAM!',
       // What is actually used as the option.
-      value: 'https://player.slam.nl/?stream=slam'
+      value: 'https://22543.live.streamtheworld.com/WEB10_MP3_SC'
   },
   {
     // What is shown to the user
