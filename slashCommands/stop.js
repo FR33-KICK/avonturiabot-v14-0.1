@@ -29,7 +29,7 @@ module.exports = {
 			.addFields(
 				{name: "AvonturiaParkMC | Muziek", value: `Muziek is gestopt met afspelen`}
 			)
-			.setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
 	
 			interaction.reply({ embeds: [embed1] })
 			setTimeout(() => subscription.unsubscribe);

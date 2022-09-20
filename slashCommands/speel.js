@@ -53,9 +53,9 @@ module.exports = {
 		var embed1 = new EmbedBuilder()
 		.setColor("#992D22")
         .addFields(
-            {name: "AvonturiaParkMC | Muziek", value: `Begonnen met het spelen van ${link} in ${channel}`}
+            {name: "AvonturiaParkMC | Muziek", value: `🎵 Begonnen met het spelen van ${link} in ${channel} 🎵`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
 
 		interaction.reply({ embeds: [embed1] })
 
