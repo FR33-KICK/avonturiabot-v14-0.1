@@ -26,7 +26,7 @@ client.on("ready", () => {
   });
     let guildId = config.guildID;
     let clientId = config.clientID;
-    let token = process.env.token
+    let token = config.token
 ;
 
     const rest = new REST({version: 10}).setToken(token);
@@ -37,6 +37,45 @@ client.on("ready", () => {
 
 })
 
+//autocomplete
+client.on('interactionCreate', async (interaction) => {
+  // check if the interaction is a request for autocomplete
+  if (interaction.isAutocomplete()) {
+      // respond to the request
+      interaction.respond([
+          {
+              // What is shown to the user
+              name: 'BBC',
+              // What is actually used as the option.
+              value: 'https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one'
+          },
+          {
+            // What is shown to the user
+            name: 'RADIO538',
+            // What is actually used as the option.
+            value: 'http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3'
+        },
+        {
+          // What is shown to the user
+          name: 'Qmusic',
+          // What is actually used as the option.
+          value: 'https://stream.qmusic.nl/qmusic/mp3'
+      },
+      {
+        // What is shown to the user
+        name: 'SLAM! top40',
+        // What is actually used as the option.
+        value: 'https://stream.slam.nl/web14_mp3'
+    },
+          {
+        // What is shown to the user
+        name: 'SLAM! Hardstyle',
+        // What is actually used as the option.
+        value: 'http://streaming.slam.nl/web11_mp3'
+    }
+      ]);
+  }
+});
 //command handler
 const commandsPath = path.join(__dirname, 'slashCommands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -67,5 +106,5 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.login(process.env.token
+client.login(config.token
 );

@@ -27,5 +27,6 @@ module.exports = {
 			interaction.reply("Muziek is gestopt")
 			setTimeout(() => subscription.unsubscribe);
 		}
+
 },
 };
