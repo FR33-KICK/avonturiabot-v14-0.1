@@ -97,6 +97,24 @@ client.on('interactionCreate', async (interaction) => {
   // What is actually used as the option.
   value: 'https://www.mp3streams.nl/zender/efteling-kids-radio/stream/107-mp3-192'
 },
+{
+  // What is shown to the user
+  name: '🎼 Muziek: AvonturiaParkMC Watershow',
+  // What is actually used as the option.
+  value: 'https://audio.jukehost.co.uk/neMH415IOMiFAZYlgewWVaUlSFMN28Jg'
+},
+{
+  // What is shown to the user
+  name: '🎼 Muziek: Efteling muziek mix',
+  // What is actually used as the option.
+  value: 'https://audio.jukehost.co.uk/ljsEqq4LuV0RpWZosuRBxJA5OBRbZWmo'
+},
+{
+  // What is shown to the user
+  name: '🎼 Muziek: AvonturiaParkMC Mainstreet muziek',
+  // What is actually used as the option.
+  value: 'https://audio.jukehost.co.uk/MtPSWXUZEGwamAKwqL6TzuajtZ3h3lTd'
+},
     
       ]);
   }
