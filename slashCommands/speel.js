@@ -34,7 +34,7 @@ module.exports = {
 			var embed2 = new EmbedBuilder()
 			.setColor("#992D22")
 			.addFields(
-				{name: "AvonturiaParkMC | Muziek", value: `❌ **Je moet in een voicechannel zitten om dit commando te gebruiken! ❌`}
+				{name: "AvonturiaParkMC | Muziek", value: `❌ Je moet in een **voicechannel** zitten om dit commando te gebruiken! ❌`}
 			)
 			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
 
