@@ -5,86 +5,81 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('speel')
 		.setDescription('Speel muziek.')
-		.addChannelOption((option) =>
-		option
-		.setName('channel')
-		.setDescription("De channel waar de muziek moet afspelen.")
-		.setRequired(true)
-		)
 		.addStringOption((option) =>
 			option
-			.setName('link')
-			.setDescription("Geef de link van de muziek op. (gebruik een direct link zoals: jukehost.co.uk of google drive)")
-			.setAutocomplete(true)
-			.setRequired(true)
+				.setName('link')
+				.setDescription("Geef de link van de muziek op. (gebruik een direct link zoals: jukehost.co.uk of google drive)")
+				.setAutocomplete(true)
+				.setRequired(true)
 		),
 	async autocomplete(interaction, client) {
 		const focusedValue = interaction.options.getFocused();
 		const choices = ["📻 Radio: SLAM! top40", "📻 Radio: Qmusic", "📻 Radio: RADIO538", "📻 Radio: BBC", "📻 Radio: SLAM! Hardstyle", "📻 Radio: !SLAM", "📻 Radio: NPO 3FM", "📻 Radio: Efteling Radio", "🎼 Muziek: Efteling muziek mix", "🎼 Muziek: AvonturiaParkMC Watershow", "🎼 Muziek: AvonturiaParkMC Mainstreet muziek", "🎼 Muziek: Disney Film muziek"];
-		const filtered = choices.filter((choice) => 
-		    choice.startsWith(focusedValue)
+		const filtered = choices.filter((choice) =>
+			choice.startsWith(focusedValue)
 		);
 		await interaction.respond(
 			filtered.map((choice) => ({ name: choice, value: choice }))
-		  );
-		},
+		);
+	},
 
-		async execute(client, interaction) { 
+	async execute(client, interaction) {
 
-			var embed2 = new EmbedBuilder()
+		const voice_channel_id = interaction.guild.members.cache.get(interaction.member.user.id).voice.channelId
+
+		var embed2 = new EmbedBuilder()
 			.setColor("#992D22")
 			.addFields(
-				{name: "AvonturiaParkMC | Muziek", value: `❌ Je moet in een **voicechannel** zitten om dit commando te gebruiken! ❌`}
+				{ name: "AvonturiaParkMC | Muziek", value: `❌ Je moet in een **voicechannel** zitten om dit commando te gebruiken! ❌` }
 			)
-			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg' });
 
-			const userVC = interaction.member.voice.channel;
+		const userVC = interaction.member.voice.channel;
 
-			//Checks if the user is in a VC
-			if (userVC == null)
-			{
-				interaction.reply({ embeds: [embed2] });
-			}else{
-				
+		//Checks if the user is in a VC
+		if (userVC == null) {
+			interaction.reply({ embeds: [embed2] });
+		} else {
 
-		let link = await interaction.options.getString("link");
-		let channel = await interaction.options.getChannel("channel");
 
-		const voiceChannelId = channel.id;
-		const voiceChannel = client.channels.cache.get(voiceChannelId);
-        const guildId = "869885487442173982";
+			let link = await interaction.options.getString("link");
+			let channel = await interaction.options.getChannel("channel");
 
-		const player = createAudioPlayer();
+			const voiceChannelId = voice_channel_id;
+			const voiceChannel = client.channels.cache.get(voiceChannelId);
+			const guildId = "869885487442173982";
 
-		const resource = createAudioResource(link);
-		player.play(resource);
+			const player = createAudioPlayer();
 
-		player.on(AudioPlayerStatus.Idle, () => {
-			setTimeout(() => subscription.unsubscribe);
-			connection.destroy();
-		});
+			const resource = createAudioResource(link);
+			player.play(resource);
 
-		const connection = joinVoiceChannel({
-			channelId: voiceChannelId,
-			guildId: guildId,
-			adapterCreator: voiceChannel.guild.voiceAdapterCreator,
-		});
+			player.on(AudioPlayerStatus.Idle, () => {
+				setTimeout(() => subscription.unsubscribe);
+				connection.destroy();
+			});
 
-		var embed1 = new EmbedBuilder()
-		.setColor("#992D22")
-        .addFields(
-            {name: "AvonturiaParkMC | Muziek", value: `🎵 **Begonnen** met het spelen van ${link} in ${channel} 🎵`}
-        )
-        .setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+			const connection = joinVoiceChannel({
+				channelId: voiceChannelId,
+				guildId: guildId,
+				adapterCreator: voiceChannel.guild.voiceAdapterCreator,
+			});
 
-		interaction.reply({ embeds: [embed1] })
+			var embed1 = new EmbedBuilder()
+				.setColor("#992D22")
+				.addFields(
+					{ name: "AvonturiaParkMC | Muziek", value: `🎵 **Begonnen** met het spelen van ${link} 🎵` }
+				)
+				.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg' });
 
-		const subscription = connection.subscribe(player);
+			interaction.reply({ embeds: [embed1] })
 
-		if (subscription) {
+			const subscription = connection.subscribe(player);
 
-			setTimeout(() => subscription.unsubscribe(), 3600000);
+			if (subscription) {
+
+				setTimeout(() => subscription.unsubscribe(), 3600000);
+			}
 		}
-	}
-},
+	},
 };
