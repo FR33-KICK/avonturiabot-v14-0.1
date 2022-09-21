@@ -31,6 +31,22 @@ module.exports = {
 
 		async execute(client, interaction) { 
 
+			var embed2 = new EmbedBuilder()
+			.setColor("#992D22")
+			.addFields(
+				{name: "AvonturiaParkMC | Muziek", value: `❌ **Je moet in een voicechannel zitten om dit commando te gebruiken! ❌`}
+			)
+			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+
+			const userVC = interaction.member.voice.channel;
+
+			//Checks if the user is in a VC
+			if (userVC == null)
+			{
+				interaction.reply({ embeds: [embed2] });
+			}else{
+				
+
 		let link = await interaction.options.getString("link");
 		let channel = await interaction.options.getChannel("channel");
 
@@ -42,6 +58,11 @@ module.exports = {
 
 		const resource = createAudioResource(link);
 		player.play(resource);
+
+		player.on(AudioPlayerStatus.Idle, () => {
+			setTimeout(() => subscription.unsubscribe);
+			connection.destroy();
+		});
 
 		const connection = joinVoiceChannel({
 			channelId: voiceChannelId,
@@ -62,7 +83,8 @@ module.exports = {
 
 		if (subscription) {
 
-			setTimeout(() => subscription.unsubscribe);
+			setTimeout(() => subscription.unsubscribe(), 3600000);
 		}
+	}
 },
 };

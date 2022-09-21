@@ -33,6 +33,7 @@ module.exports = {
 	
 			interaction.reply({ embeds: [embed1] })
 			setTimeout(() => subscription.unsubscribe);
+			connection.destroy();
 		}
 
 		

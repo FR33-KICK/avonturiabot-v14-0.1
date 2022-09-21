@@ -4,6 +4,7 @@ const config = require("./config.json");
 const fs = require("node:fs");
 const path = require('node:path')
 const { REST } = require("@discordjs/rest");
+const { generateDependencyReport, AudioPlayerStatus, joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
 
 const client = new Client({
     intents: [
@@ -20,11 +21,26 @@ const { ActivityType } = require("discord.js");
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  let guildId = config.guildID;
+  const voiceChannelId = "876167153747894284";
+  const voiceChannel = client.channels.cache.get(voiceChannelId);
+
+
+  const player = createAudioPlayer();
+
+  const connection = joinVoiceChannel({
+    channelId: voiceChannelId,
+    guildId: guildId,
+    adapterCreator: voiceChannel.guild.voiceAdapterCreator,
+  });
+
+  const subscription = connection.subscribe(player);
+  setTimeout(() => subscription.unsubscribe);
+  connection.destroy();
 
   client.user.setActivity("AvonturiaParkMC", {
     type: ActivityType.Watching,
   });
-    let guildId = config.guildID;
     let clientId = config.clientID;
     let token = process.env.token
 ;
@@ -125,6 +141,7 @@ client.on('interactionCreate', async (interaction) => {
       ]);
   }
 });
+
 //command handler
 const commandsPath = path.join(__dirname, 'slashCommands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
