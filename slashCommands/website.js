@@ -10,9 +10,9 @@ module.exports = {
 		.setTitle(':scroll: AvonturiaParkMC | Website')
         .setColor('#992D22')
         .addFields(
-            {name: 'AvonturiaParkMC website:', value: 'Avonturiaparkmc.nl'}
+            {name: 'AvonturiaParkMC website:', value: `[Klik hier!](Avonturiaparkmc.nl)`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Website', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Website', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
 	await interaction.reply({embeds: [botEmbed], ephemeral: true});
 

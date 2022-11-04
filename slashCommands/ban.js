@@ -25,7 +25,7 @@ module.exports = {
         .addFields(
             {name: "**Verbannen**", value: `U bent verbannen van onze discord server \n\n **Reden:** ${reason} \n\n Bent u het niet eens met deze ban? Dan kunt u het onderstaande formulier invullen. \nhttps://forms.gle/5qjv1s25vmvUd4ua8`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         var embed3 = new EmbedBuilder()
         .setTitle("AvonturiaParkMC | Ban")
@@ -33,7 +33,7 @@ module.exports = {
         .addFields(
             {name: "**Letop!**", value: `Deze persoon heeft zijn/haar prive berichten niet aanstaan.`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         await member.send({embeds: [embed1] }).catch(() =>{
             interaction.channel.send({embeds: [embed3]})
@@ -52,7 +52,7 @@ module.exports = {
         .addFields(
             {name: "**Succes!**", value: `${member.user.tag} is verbannen. ID: ${member.user.id}`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         await interaction.reply({embeds: [embed4]});
 

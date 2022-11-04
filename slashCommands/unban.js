@@ -22,7 +22,7 @@ module.exports = {
         .addFields(
             {name: "**Unban**", value: `U bent geunbanned van onze discord server \n\n U kunt weer deelnemen via de onderstaande link. \nhttps://discord.io/avonturiaparkmc`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         var embed3 = new EmbedBuilder()
         .setTitle("AvonturiaParkMC | Ban")
@@ -30,7 +30,7 @@ module.exports = {
         .addFields(
             {name: "**Mislukt.**", value: `Deze gebruiker is niet gebanned.`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         client.users.fetch((id), false).then((user) => {
             user.send({embeds: [embed1] });
@@ -54,7 +54,7 @@ module.exports = {
         .addFields(
             {name: "**Succes!**", value: `${member.user.tag}  is unbanned.`}
         )
-        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/qxoexbQ.jpg'});
+        .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
         interaction.reply({embeds: [embed4]});
 

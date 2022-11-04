@@ -32,7 +32,7 @@ module.exports = {
 			.addFields(
 				{ name: "AvonturiaParkMC | Muziek", value: `❌ Je moet in een **voicechannel** zitten om dit commando te gebruiken! ❌` }
 			)
-			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg' });
+			.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/E1irn4t.png' });
 
 		const userVC = interaction.member.voice.channel;
 
@@ -70,7 +70,7 @@ module.exports = {
 				.addFields(
 					{ name: "AvonturiaParkMC | Muziek", value: `🎵 **Begonnen** met het spelen van ${link} 🎵` }
 				)
-				.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/qxoexbQ.jpg' });
+				.setFooter({ text: 'AvonturiaParkMC | Muziek', iconURL: 'https://i.imgur.com/E1irn4t.png' });
 
 			interaction.reply({ embeds: [embed1] })
 
