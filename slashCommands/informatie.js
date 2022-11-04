@@ -20,7 +20,7 @@ module.exports = {
         )
         .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
-	await interaction.reply({embeds: [botEmbed]});
+	await interaction.reply({embeds: [botEmbed], fetchReply: true });
 
 },
 };
