@@ -11,7 +11,7 @@ module.exports = {
 		.setTitle("AvonturiaParkMC | Informatie")
 		.setColor("#992D22")
         .addFields(
-            {name: "Welkom in de discord server van Avonturia", value: '• Op dit moment zijn wij in onderhoud :pick:\r\n• Houdt #🎢-mededelingen  in de gaten voor updates! :roller_coaster:\r\n\r\nMeer van Avonturia? #🐦-socialmedia '}
+			{name: '_AvonturiaParkMC_ is een online custom pretpark in het spel Minecraft. Het park bestaat uit vijf themagebieden met unieke attracties. Zien we jou binnenkort ook een ritje maken in een van de attracties? Of ben jij bij een van de grote evenementen?  :confetti_ball: ', value: `\n`}
         )
         .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 

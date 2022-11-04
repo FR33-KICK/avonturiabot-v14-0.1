@@ -8,7 +8,7 @@ module.exports = {
 	async execute(client,interaction) {
 
 		var botEmbed = new EmbedBuilder()
-		.setTitle(`Welkom in de officiële Discord server van AvonturiaParkMC! <:Avonturialogo:1007613284184248461>`)
+		.setTitle(`:red_circle:  Welkom in de officiële Discord server van AvonturiaParkMC! :red_circle:`)
         .setColor('#992D22')
         .addFields(
             {name: 'Wat is AvonturiaParkMC?', value: `_AvonturiaParkMC_ is een online custom pretpark in het spel Minecraft. Het park bestaat uit vijf themagebieden met unieke attracties. Zien we jou binnenkort ook een ritje maken in een van de attracties? Of ben jij bij een van de grote evenementen?  :confetti_ball: `},
@@ -20,7 +20,7 @@ module.exports = {
         )
         .setFooter({ text: 'AvonturiaParkMC | Informatie', iconURL: 'https://i.imgur.com/E1irn4t.png'});
 
-	await interaction.reply({embeds: [botEmbed], ephemeral: true});
+	await interaction.reply({embeds: [botEmbed]});
 
 },
 };
